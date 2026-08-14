@@ -1,0 +1,10 @@
+# https://www.robotstxt.org/robotstxt.html
+# Luxe Ventures — premium event decoration and styling
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+# Sitemaps
+Sitemap: https://luxe-ventures.com/sitemap.xml
