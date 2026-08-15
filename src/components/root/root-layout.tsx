@@ -51,8 +51,8 @@ export function RootLayout() {
 
 function RootCrashFallback() {
   return (
-    <main className="cn-root-state grid min-h-screen place-items-center bg-brand-bg px-6 text-center">
-      <div className="cn-root-card">
+    <main className="grid min-h-screen place-items-center bg-brand-bg px-6 text-center">
+      <div>
         <h1 className="font-heading text-4xl">Something went quiet.</h1>
         <p className="mt-4 font-body text-brand-text/65 text-sm">Please refresh and try again.</p>
         <button

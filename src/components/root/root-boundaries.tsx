@@ -1,5 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useMemo } from "react";
+import Loader2 from "@/assets/svgs/loader-2.svg?react";
+import OctagonX from "@/assets/svgs/octagon-x.svg?react";
 import { Button } from "@/components/ui/button";
 import { normalizeError, reportError } from "@/lib/error-reporting";
 
@@ -7,17 +9,7 @@ export function RootPending() {
   return (
     <div className="grid min-h-screen place-items-center bg-brand-bg px-6 text-center">
       <div>
-        <svg
-          className="mx-auto mb-5 size-12 animate-spin text-brand-detail"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-        >
-          <title>Loading</title>
-          <path d="M12 2a10 10 0 1 0 10 10" />
-        </svg>
+        <Loader2 className="mx-auto mb-5 size-12 animate-spin text-brand-detail" />
         <p className="font-heading text-2xl">Preparing something beautiful…</p>
       </div>
     </div>
@@ -32,20 +24,7 @@ export function RootError({ error }: { error: unknown }) {
   return (
     <div className="grid min-h-screen place-items-center bg-brand-bg px-6">
       <div className="max-w-lg text-center">
-        <svg
-          className="mx-auto mb-6 size-14 text-brand-detail"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <title>Application Error</title>
-          <circle cx="12" cy="12" r="10" />
-          <line x1="8" y1="8" x2="16" y2="16" />
-          <line x1="16" y1="8" x2="8" y2="16" />
-        </svg>
+        <OctagonX className="mx-auto mb-6 size-14 text-brand-detail" />
         <h1 className="font-heading text-4xl">Something went quiet.</h1>
         <p className="mt-4 font-body text-brand-text/65 text-sm leading-7">
           This is on us. Please refresh the page, or return home while we restore the experience.
@@ -81,20 +60,7 @@ export function RootNotFound() {
   return (
     <div className="grid min-h-screen place-items-center bg-brand-bg px-6 text-center">
       <div>
-        <svg
-          className="mx-auto mb-6 size-14 text-brand-detail"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <title>Page Not Found</title>
-          <circle cx="12" cy="12" r="10" />
-          <line x1="8" y1="8" x2="16" y2="16" />
-          <line x1="16" y1="8" x2="8" y2="16" />
-        </svg>
+        <OctagonX className="mx-auto mb-6 size-14 text-brand-detail" />
         <h1 className="font-heading text-4xl">That page has drifted away.</h1>
         <p className="mt-4 font-body text-brand-text/65 text-sm">
           The page you&apos;re looking for does not exist.

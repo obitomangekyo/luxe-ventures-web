@@ -1,6 +1,6 @@
-
 @import "tailwindcss";
 @import "@fontsource-variable/playfair-display";
+@import "@fontsource-variable/montserrat";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
@@ -24,8 +24,35 @@
   --color-destructive: var(--destructive);
   --color-border: var(--border);
   --color-input: var(--input);
-  --color-ring: var(--ring); 
+  --color-ring: var(--ring);
+  --color-brand-bg: #faf9f6;
+  --color-brand-text: #1a1a1a;
+  --color-brand-accent: #ffd1dc;
+  --color-brand-detail: #e5d3b3;
   --font-heading: "Playfair Display", serif;
+  --font-body: "Montserrat", sans-serif;
+}
+
+:root {
+  --background: #faf9f6;
+  --foreground: #1a1a1a;
+  --card: #fffdfa;
+  --card-foreground: #1a1a1a;
+  --popover: #fffdfa;
+  --popover-foreground: #1a1a1a;
+  --primary: #1a1a1a;
+  --primary-foreground: #faf9f6;
+  --secondary: #f3eee7;
+  --secondary-foreground: #1a1a1a;
+  --muted: #f3eee7;
+  --muted-foreground: #6d675f;
+  --accent: #ffd1dc;
+  --accent-foreground: #1a1a1a;
+  --destructive: #9d3d4c;
+  --border: rgb(26 26 26 / 15%);
+  --input: rgb(26 26 26 / 22%);
+  --ring: #e5d3b3;
+  --radius: 0.15rem;
 }
 
 html {
@@ -39,26 +66,43 @@ body,
 }
 
 body {
-  @apply bg-background text-foreground antialiased;
+  @apply bg-brand-bg font-body text-brand-text antialiased;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   @apply font-heading font-normal;
 }
 
+::selection {
+  background: var(--color-brand-accent);
+  color: var(--color-brand-text);
+}
+
+@keyframes atelier-drift {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(0, -22px, 0); }
+}
+
+.atelier-particle {
+  animation: atelier-drift 12s ease-in-out infinite alternate;
+}
+
 .cn-toast {
-  border: 1px solid rgb(17 17 17 / 0.16) !important;
-  border-radius: 0 !important;
-  background: rgb(255 255 255 / 0.96) !important;
-  box-shadow: 6px 6px 0 rgb(17 17 17 / 0.12) !important;
-  color: #111111 !important;
-  font-family: var(--font-body);
+  border: 1px solid rgb(229 211 179 / 80%) !important;
+  border-radius: 0.15rem !important;
+  background: #fffdfa !important;
+  color: #1a1a1a !important;
+  font-family: "Montserrat", sans-serif !important;
+  box-shadow: 0 18px 50px rgb(26 26 26 / 12%) !important;
 }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  body { animation: none; }
-  .cn-root-state { animation: none; }
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
