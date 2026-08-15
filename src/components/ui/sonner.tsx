@@ -1,3 +1,11 @@
+import {
+  Alert02Icon,
+  CheckmarkCircle02Icon,
+  InformationCircleIcon,
+  LoaderPinwheelIcon,
+  OctagonXIcon,
+} from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
 import { Toaster as Sonner, type ToasterProps } from "sonner";
 
 const Toaster = ({ ...props }: ToasterProps) => {
@@ -5,6 +13,13 @@ const Toaster = ({ ...props }: ToasterProps) => {
     <Sonner
       theme="light"
       className="toaster group"
+      icons={{
+        success: <HugeiconsIcon icon={CheckmarkCircle02Icon} className="w-4" />,
+        info: <HugeiconsIcon icon={InformationCircleIcon} className="w-4" />,
+        warning: <HugeiconsIcon icon={Alert02Icon} className="w-4" />,
+        error: <HugeiconsIcon icon={OctagonXIcon} className="w-4" />,
+        loading: <HugeiconsIcon icon={LoaderPinwheelIcon} className="w-4 animate-spin" />,
+      }}
       style={
         {
           "--normal-bg": "var(--popover)",
