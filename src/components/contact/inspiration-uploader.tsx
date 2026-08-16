@@ -82,7 +82,7 @@ export function InspirationUploader({
                     key={`${file.name}-${file.lastModified}`}
                     className="basis-82/100 pl-3 sm:basis-1/2"
                   >
-                    <div className="relative overflow-hidden border border-brand-detail/60 bg-white/40">
+                    <div className="relative overflow-hidden border border-brand-detail/60 bg-card/40">
                       <img
                         src={url}
                         alt={`Inspiration reference ${index + 1}: ${file.name}`}
@@ -121,7 +121,7 @@ export function InspirationUploader({
             </Button>
           </div>
         ) : (
-          <Empty className="border border-brand-detail/70 border-dashed bg-white/25 px-5 py-8">
+          <Empty className="border border-brand-detail/70 border-dashed bg-card/25 px-5 py-8">
             <EmptyHeader>
               <EmptyMedia variant="icon" className="bg-brand-detail/25 text-brand-text">
                 <ImagePlus className="w-4" />

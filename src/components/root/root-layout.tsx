@@ -6,6 +6,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { env } from "@/env";
 import { reportError } from "@/lib/error-reporting";
 import { Sentry } from "@/lib/sentry";
+import { ThemeProvider } from "@/lib/theme";
 
 export function RootLayout() {
   useEffect(() => {
@@ -27,25 +28,27 @@ export function RootLayout() {
   }, []);
 
   return (
-    <GoogleReCaptchaProvider
-      reCaptchaKey={env.VITE_RECAPTCHA_SITE_KEY}
-      scriptProps={{ async: true, defer: true, appendTo: "head" }}
-    >
-      <noscript>
-        <iframe
-          src={`https://www.googletagmanager.com/ns.html?id=${env.VITE_GTM_ID}`}
-          height="0"
-          width="0"
-          title="GTM"
-          style={{ display: "none", visibility: "hidden" }}
-        />
-      </noscript>
-      <Sentry.ErrorBoundary fallback={<RootCrashFallback />}>
-        <Outlet />
-      </Sentry.ErrorBoundary>
-      <GtmTracking />
-      <Toaster position="top-right" />
-    </GoogleReCaptchaProvider>
+    <ThemeProvider>
+      <GoogleReCaptchaProvider
+        reCaptchaKey={env.VITE_RECAPTCHA_SITE_KEY}
+        scriptProps={{ async: true, defer: true, appendTo: "head" }}
+      >
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${env.VITE_GTM_ID}`}
+            height="0"
+            width="0"
+            title="GTM"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
+        <Sentry.ErrorBoundary fallback={<RootCrashFallback />}>
+          <Outlet />
+        </Sentry.ErrorBoundary>
+        <GtmTracking />
+        <Toaster position="top-right" />
+      </GoogleReCaptchaProvider>
+    </ThemeProvider>
   );
 }
 

@@ -25,34 +25,69 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-brand-bg: #faf9f6;
-  --color-brand-text: #1a1a1a;
-  --color-brand-accent: #ffd1dc;
-  --color-brand-detail: #e5d3b3;
+  --color-brand-bg: var(--brand-bg);
+  --color-brand-text: var(--brand-text);
+  --color-brand-accent: var(--brand-accent);
+  --color-brand-detail: var(--brand-detail);
+  --color-brand-muted: var(--brand-muted);
   --font-heading: "Playfair Display", serif;
   --font-body: "Montserrat", sans-serif;
 }
 
 :root {
-  --background: #faf9f6;
-  --foreground: #1a1a1a;
+  --brand-bg: #faf9f6;
+  --brand-text: #1a1a1a;
+  --brand-accent: #d7b477;
+  --brand-detail: #e5d3b3;
+  --brand-muted: #f3eee7;
+  --theme-classic-gold: #e5d3b3;
+  --theme-classic-secondary: #1a1a1a;
+  --theme-summer-mint: #9fe4bf;
+  --theme-summer-peach: #f3a07d;
+  --background: var(--brand-bg);
+  --foreground: var(--brand-text);
   --card: #fffdfa;
-  --card-foreground: #1a1a1a;
+  --card-foreground: var(--brand-text);
   --popover: #fffdfa;
-  --popover-foreground: #1a1a1a;
-  --primary: #1a1a1a;
-  --primary-foreground: #faf9f6;
-  --secondary: #f3eee7;
-  --secondary-foreground: #1a1a1a;
-  --muted: #f3eee7;
+  --popover-foreground: var(--brand-text);
+  --primary: var(--brand-text);
+  --primary-foreground: var(--brand-bg);
+  --secondary: var(--brand-muted);
+  --secondary-foreground: var(--brand-text);
+  --muted: var(--brand-muted);
   --muted-foreground: #6d675f;
-  --accent: #ffd1dc;
-  --accent-foreground: #1a1a1a;
+  --accent: var(--brand-accent);
+  --accent-foreground: var(--brand-text);
   --destructive: #9d3d4c;
   --border: rgb(26 26 26 / 15%);
   --input: rgb(26 26 26 / 22%);
-  --ring: #e5d3b3;
+  --ring: var(--brand-detail);
   --radius: 0.15rem;
+}
+
+[data-theme="summer"] {
+  --brand-bg: #fff1e7;
+  --brand-text: #233a35;
+  --brand-accent: #e88762;
+  --brand-detail: #3f8f70;
+  --brand-muted: #c9efd9;
+  --background: var(--brand-bg);
+  --foreground: var(--brand-text);
+  --card: #fffaf4;
+  --card-foreground: var(--brand-text);
+  --popover: #fffaf4;
+  --popover-foreground: var(--brand-text);
+  --primary: var(--brand-text);
+  --primary-foreground: var(--brand-bg);
+  --secondary: var(--brand-muted);
+  --secondary-foreground: var(--brand-text);
+  --muted: var(--brand-muted);
+  --muted-foreground: #4f6a60;
+  --accent: var(--brand-accent);
+  --accent-foreground: var(--brand-text);
+  --border: rgb(35 58 53 / 22%);
+  --input: rgb(35 58 53 / 30%);
+  --ring: var(--brand-detail);
 }
 
 html {
@@ -67,6 +102,7 @@ body,
 
 body {
   @apply bg-brand-bg font-body text-brand-text antialiased;
+  transition: background-color 400ms ease, color 400ms ease;
 }
 
 h1,
@@ -88,17 +124,17 @@ h6 {
   to { transform: translate3d(0, -22px, 0); }
 }
 
-.atelier-particle {
+@utility atelier-particle {
   animation: atelier-drift 12s ease-in-out infinite alternate;
 }
 
-.cn-toast {
-  border: 1px solid rgb(229 211 179 / 80%) !important;
+@utility cn-toast {
+  border: 1px solid color-mix(in srgb, var(--brand-accent) 80%, transparent) !important;
   border-radius: 0.15rem !important;
-  background: #fffdfa !important;
-  color: #1a1a1a !important;
+  background: var(--card) !important;
+  color: var(--brand-text) !important;
   font-family: "Montserrat", sans-serif !important;
-  box-shadow: 0 18px 50px rgb(26 26 26 / 12%) !important;
+  box-shadow: 0 18px 50px color-mix(in srgb, var(--brand-text) 12%, transparent) !important;
 }
 
 @media (prefers-reduced-motion: reduce) {

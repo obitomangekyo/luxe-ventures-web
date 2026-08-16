@@ -47,7 +47,7 @@ export function RootError({ error }: { error: unknown }) {
           </Button>
         </div>
         {import.meta.env.DEV && (
-          <pre className="mt-8 overflow-auto border border-brand-detail/50 bg-white/40 p-4 text-left font-mono text-xs">
+          <pre className="mt-8 overflow-auto border border-brand-detail/50 bg-card/40 p-4 text-left font-mono text-xs">
             {normalized.stack ?? normalized.message}
           </pre>
         )}

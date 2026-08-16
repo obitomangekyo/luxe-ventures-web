@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import ArrowNE from "@/assets/svgs/doodle-icons/arrow-ne.svg?react";
 import Sparkles from "@/assets/svgs/sparkles.svg?react";
-import { OptimizedImage } from "@/components/site/optimized-image";
+import { ThemedImage } from "@/components/site/themed-image";
 import { Button } from "@/components/ui/button";
 import { imageAssets } from "@/lib/image-assets";
 
@@ -44,9 +44,16 @@ export function Hero() {
       </div>
       <div className="relative mx-auto w-full max-w-md md:ml-auto">
         <div className="absolute -inset-3 border border-brand-detail/70" />
-        <OptimizedImage
-          asset={imageAssets.heroReception}
-          alt="Candlelit luxury wedding reception styled by Luxe Ventures"
+        <ThemedImage
+          asset={imageAssets.heroCelebration}
+          alt={{
+            luxury:
+              "Candlelit luxury wedding reception styled with ivory flowers, crystal glassware, and warm drapery",
+            summer:
+              "Sunlit garden gathering with warm white linen, mint napkins, warm peach flowers, citrus, and woven chairs",
+          }}
+          width={1086}
+          height={1448}
           sizes="(min-width: 768px) 36vw, 100vw"
           fetchPriority="high"
           className="relative aspect-3/4 w-full object-cover"

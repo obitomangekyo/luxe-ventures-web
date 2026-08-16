@@ -1,6 +1,6 @@
 import ArrowNE from "@/assets/svgs/doodle-icons/arrow-ne.svg?react";
-import { OptimizedImage } from "@/components/site/optimized-image";
 import { SectionIntro } from "@/components/site/section-intro";
+import { ThemedImage } from "@/components/site/themed-image";
 import { Separator } from "@/components/ui/separator";
 import { services } from "@/data/content";
 import { cn } from "@/lib/utils";
@@ -19,9 +19,11 @@ export function Services() {
             key={service.number}
           >
             <div className={cn("overflow-hidden", index % 2 === 1 && "md:order-2")}>
-              <OptimizedImage
+              <ThemedImage
                 asset={service.image}
                 alt={service.alt}
+                width={service.width}
+                height={service.height}
                 sizes="(min-width: 768px) 50vw, 100vw"
                 className="aspect-4/3 w-full object-cover transition-transform duration-1000 hover:scale-105"
               />

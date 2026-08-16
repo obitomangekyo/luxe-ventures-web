@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/sheet";
 import { navigationLinks } from "@/data/content";
 import { useIsMobile } from "@/lib/use-is-mobile";
+import { ThemeToggle } from "./theme-toggle";
 
 const linkClass =
   "font-body text-[10px] text-brand-text/75 uppercase tracking-[0.2em] transition-colors hover:text-brand-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-detail focus-visible:ring-offset-4 focus-visible:ring-offset-brand-bg";
@@ -38,7 +39,7 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-40 border-brand-text/10 border-b bg-brand-bg/75 backdrop-blur-xl">
-      <div className="container mx-auto flex h-16 items-center justify-between px-5 xl:h-20 xl:px-10">
+      <div className="container mx-auto flex h-16 items-center justify-between px-5 md:h-20 lg:h-16 xl:h-20 xl:px-10">
         <Link to="." hash="top" aria-label="Luxe Ventures home">
           <LuxeVenturesFullLogo className="w-20 text-brand-detail xl:w-24" />
         </Link>
@@ -49,6 +50,7 @@ export function SiteHeader() {
                 {link.label}
               </Link>
             ))}
+            <ThemeToggle />
             <Button
               nativeButton={false}
               render={<Link to="." hash="contact" />}
@@ -90,6 +92,7 @@ export function SiteHeader() {
                     {link.label}
                   </Link>
                 ))}
+                <ThemeToggle className="mt-2 self-start" />
                 <Button
                   nativeButton={false}
                   render={<Link to="." hash="contact" />}

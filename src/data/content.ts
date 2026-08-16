@@ -1,3 +1,5 @@
+import { imageAssets } from "@/lib/image-assets";
+
 export const navigationLinks = [
   { href: "story", label: "Our story" },
   { href: "services", label: "Services" },
@@ -6,23 +8,49 @@ export const navigationLinks = [
 
 export const gallery = [
   {
-    asset: imageAssets.ballroomEntrance,
-    alt: "Candlelit Floral Ballroom Entrance",
+    asset: imageAssets.venueEntrance,
+    alt: {
+      luxury: "Candlelit floral entrance with ivory drapery and soft champagne lighting",
+      summer:
+        "Bright garden-venue entrance with mint fabric, warm peach ribbons, and seasonal flowers",
+    },
+    width: 1122,
+    height: 1402,
     className: "aspect-4/5",
   },
   {
     asset: imageAssets.intimateDinner,
-    alt: "Romantic Candlelit Floral Table Setting",
+    alt: {
+      luxury:
+        "Romantic candlelit dinner table with ivory flowers, crystal glassware, and warm linen",
+      summer:
+        "Open-air dinner table with warm white linen, mint napkins, warm peach flowers, and garden greenery",
+    },
+    width: 1254,
+    height: 1254,
     className: "aspect-square md:mt-20",
   },
   {
     asset: imageAssets.placeSetting,
-    alt: "Elegant dinner party styling",
+    alt: {
+      luxury:
+        "Elegant dinner place setting with ivory linen, champagne flatware, and delicate florals",
+      summer:
+        "Handmade ceramic place setting with mint linen, warm peach cup, clear glass, and fresh greenery",
+    },
+    width: 1122,
+    height: 1402,
     className: "aspect-4/5",
   },
   {
     asset: imageAssets.gardenCelebration,
-    alt: "Outdoor celebration beneath greenery",
+    alt: {
+      luxury: "Outdoor celebration table beneath greenery with refined floral arrangements",
+      summer:
+        "Sunny garden celebration table with warm white linen, mint accents, warm peach flowers, and fruit",
+    },
+    width: 1254,
+    height: 1254,
     className: "aspect-square md:mt-20",
   },
 ] as const;
@@ -33,22 +61,39 @@ export const services = [
     title: "Social Celebrations",
     copy: "From milestones and birthdays to elegant bridal showers and intimate dinners, we curate personalized micro-environments that match your exact theme.",
     image: imageAssets.socialCelebration,
-    alt: "Blush floral table centerpiece for a social celebration",
+    alt: {
+      luxury: "Ivory floral table centerpiece for an intimate social celebration",
+      summer:
+        "Welcoming open-air brunch table with mint linen, warm peach napkins, seasonal flowers, and peaches",
+    },
+    width: 1448,
+    height: 1086,
   },
   {
     number: "02",
-    title: "Corporate Galas",
+    title: "Corporate Gatherings",
     copy: "Elevating business launches, gala nights, and holiday parties with crisp, professional layouts that honor and reflect your brand profile.",
-    image: imageAssets.corporateGala,
-    alt: "Elevated corporate gala lounge and event design",
+    image: imageAssets.corporateGathering,
+    alt: {
+      luxury:
+        "Elevated corporate gala lounge with charcoal seating, warm lighting, and floral accents",
+      summer:
+        "Light-filled corporate gathering lounge with mint seating, warm peach cushions, pale wood, and plants",
+    },
+    width: 1448,
+    height: 1086,
   },
   {
     number: "03",
     title: "Custom Themes",
     copy: "Bespoke creative design structures built from the ground up for specific large-scale event settings and elite installations.",
     image: imageAssets.customTheme,
-    alt: "Bespoke floral backdrop and wedding installation",
+    alt: {
+      luxury: "Bespoke floral backdrop and sculptural installation for an elegant event",
+      summer:
+        "Handmade outdoor ceremony backdrop with mint arches, warm peach fabric, canvas, wood, and greenery",
+    },
+    width: 1448,
+    height: 1086,
   },
 ] as const;
-
-import { imageAssets } from "@/lib/image-assets";

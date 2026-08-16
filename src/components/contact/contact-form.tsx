@@ -150,10 +150,10 @@ function DateField({ control }: { control: InquiryForm["control"] }) {
 }
 
 const eventTypeOptions = [
-  { label: "Wedding reception", value: "wedding" },
-  { label: "Corporate gala", value: "corporate" },
-  { label: "Milestone celebration", value: "birthday" },
-  { label: "Bespoke custom setup", value: "custom" },
+  { label: "Wedding reception", value: "Wedding" },
+  { label: "Milestone celebration", value: "Birthday" },
+  { label: "Corporate gathering", value: "Corporate" },
+  { label: "Bespoke custom setup", value: "Other" },
 ];
 
 function EventTypeField({ control }: { control: InquiryForm["control"] }) {
@@ -344,7 +344,7 @@ export function ContactForm() {
         control={form.control}
         name="desiredColors"
         label="Preferred palette"
-        placeholder="Lavender blush, gold accents, crisp whites"
+        placeholder="Soft lavender, gold accents, crisp whites"
       />
       {/** biome-ignore lint/complexity/useSimplifiedLogicExpression: () */}
       {false && (
@@ -396,7 +396,7 @@ export function ContactForm() {
           )}
         </Button>
         {form.formState.errors.root && (
-          <p role="alert" className="font-body text-[#9d3d4c] text-xs">
+          <p role="alert" className="font-body text-destructive text-xs">
             {form.formState.errors.root.message}
           </p>
         )}

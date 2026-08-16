@@ -9,6 +9,7 @@ export function generateStructuredData() {
       name: SEO_CONSTANTS.siteName,
       url: SEO_CONSTANTS.siteUrl,
       description: SEO_CONSTANTS.description,
+      image: SEO_CONSTANTS.socialImage,
       sameAs: [`https://instagram.com/${env.VITE_CONTACT_INSTAGRAM}`],
     },
     websiteData: {
@@ -24,6 +25,7 @@ export function generateStructuredData() {
       name: SEO_CONSTANTS.siteName,
       description: SEO_CONSTANTS.description,
       url: SEO_CONSTANTS.siteUrl,
+      image: SEO_CONSTANTS.socialImage,
       areaServed: "New Jersey",
       serviceType: "Event decoration and styling",
     },
