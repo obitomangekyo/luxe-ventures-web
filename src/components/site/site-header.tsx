@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import ArrowNE from "@/assets/svgs/doodle-icons/arrow-ne.svg?react";
 import Menu from "@/assets/svgs/doodle-icons/menu.svg?react";
 import LuxeVenturesFullLogo from "@/assets/svgs/luxe-ventures-full-logo.svg?react";
+import LuxeVenturesWordmark from "@/assets/svgs/luxe-ventures-wordmark.svg?react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -80,7 +81,7 @@ export function SiteHeader() {
             >
               <SheetHeader className="p-0">
                 <Link to="." hash="top" aria-label="Luxe Ventures home">
-                  <LuxeVenturesFullLogo className="w-24 text-brand-detail" />
+                  <LuxeVenturesWordmark className="w-32 text-brand-detail" />
                 </Link>
                 <SheetDescription className="font-body text-brand-text/55 text-xs">
                   Event design, thoughtfully considered.

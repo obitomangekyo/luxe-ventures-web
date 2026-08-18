@@ -20,6 +20,8 @@ export const env = createEnv({
     VITE_RECAPTCHA_SITE_KEY: z.string().min(1),
     VITE_CONTACT_EMAIL: z.email(),
     VITE_CONTACT_INSTAGRAM: z.string().min(1),
+    VITE_CONTACT_PHONE: z.string().regex(/^\+?[1-9]\d{7,14}$/),
+    VITE_BEHOLD_WIDGET_ID: z.string().min(1),
     VITE_GTM_ID: z.string().min(1),
   },
 

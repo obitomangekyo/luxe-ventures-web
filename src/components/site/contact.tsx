@@ -1,3 +1,4 @@
+import Plane from "@/assets/svgs/doodle-icons/plane.svg?react";
 import { ContactForm } from "@/components/contact/contact-form";
 import { SectionIntro } from "@/components/site/section-intro";
 import { env } from "@/env";
@@ -13,13 +14,25 @@ export function Contact() {
             entirely yours.
           </p>
           <div className="mt-10 space-y-3 font-body text-brand-text/60 text-xs">
-            <p>Based in New Jersey · Creating everywhere</p>
-            <a
-              href={`mailto:${env.VITE_CONTACT_EMAIL}`}
-              className="inline-block underline decoration-brand-detail underline-offset-4"
-            >
-              {env.VITE_CONTACT_EMAIL}
-            </a>
+            <p>
+              Based in Union, NJ · Serving NJ, NY &amp; PA <Plane className="inline-block h-lh" />
+            </p>
+            <div>
+              <a
+                href={`mailto:${env.VITE_CONTACT_EMAIL}`}
+                className="underline decoration-brand-detail underline-offset-4"
+              >
+                {env.VITE_CONTACT_EMAIL}
+              </a>
+            </div>
+            <div>
+              <a
+                href={`tel:${env.VITE_CONTACT_PHONE}`}
+                className="underline decoration-brand-detail underline-offset-4"
+              >
+                {env.VITE_CONTACT_PHONE}
+              </a>
+            </div>
           </div>
         </div>
         <ContactForm />

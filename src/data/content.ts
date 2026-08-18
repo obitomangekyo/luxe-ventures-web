@@ -14,8 +14,6 @@ export const gallery = [
       summer:
         "Bright garden-venue entrance with mint fabric, warm peach ribbons, and seasonal flowers",
     },
-    width: 1122,
-    height: 1402,
     className: "aspect-4/5",
   },
   {
@@ -26,8 +24,6 @@ export const gallery = [
       summer:
         "Open-air dinner table with warm white linen, mint napkins, warm peach flowers, and garden greenery",
     },
-    width: 1254,
-    height: 1254,
     className: "aspect-square md:mt-20",
   },
   {
@@ -38,8 +34,6 @@ export const gallery = [
       summer:
         "Handmade ceramic place setting with mint linen, warm peach cup, clear glass, and fresh greenery",
     },
-    width: 1122,
-    height: 1402,
     className: "aspect-4/5",
   },
   {
@@ -49,9 +43,17 @@ export const gallery = [
       summer:
         "Sunny garden celebration table with warm white linen, mint accents, warm peach flowers, and fruit",
     },
-    width: 1254,
-    height: 1254,
     className: "aspect-square md:mt-20",
+  },
+  {
+    asset: imageAssets.centerPiece,
+    alt: {
+      luxury:
+        "Tall elevated floral centerpiece with ivory blooms on a champagne-gold stand in a formal reception",
+      summer:
+        "Tall mint and peach floral centerpiece elevated above a bright contemporary celebration table",
+    },
+    className: "aspect-4/5",
   },
 ] as const;
 
@@ -59,15 +61,13 @@ export const services = [
   {
     number: "01",
     title: "Social Celebrations",
-    copy: "From milestones and birthdays to elegant bridal showers and intimate dinners, we curate personalized micro-environments that match your exact theme.",
+    copy: "From milestones and birthdays to elegant bridal showers and intimate dinners, we curate personalized settings that match your exact theme.",
     image: imageAssets.socialCelebration,
     alt: {
       luxury: "Ivory floral table centerpiece for an intimate social celebration",
       summer:
         "Welcoming open-air brunch table with mint linen, warm peach napkins, seasonal flowers, and peaches",
     },
-    width: 1448,
-    height: 1086,
   },
   {
     number: "02",
@@ -80,8 +80,6 @@ export const services = [
       summer:
         "Light-filled corporate gathering lounge with mint seating, warm peach cushions, pale wood, and plants",
     },
-    width: 1448,
-    height: 1086,
   },
   {
     number: "03",
@@ -93,7 +91,5 @@ export const services = [
       summer:
         "Handmade outdoor ceremony backdrop with mint arches, warm peach fabric, canvas, wood, and greenery",
     },
-    width: 1448,
-    height: 1086,
   },
 ] as const;

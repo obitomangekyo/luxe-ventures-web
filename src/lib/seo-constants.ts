@@ -12,7 +12,8 @@ export const SEO_CONSTANTS = {
     "New Jersey event designer",
   ],
   themeColor: "#FAF9F6",
-  socialImage: "https://luxe-ventures.com/images/luxe-ventures/social-preview.jpg",
+  socialImage:
+    "https://res.cloudinary.com/smoqpurp/image/upload/v1786870317/luxe-ventures-web/social-preview.jpg",
   socialImageAlt: "Thoughtfully styled Luxe Ventures event tablescape with warm floral details",
   socialImageWidth: "1731",
   socialImageHeight: "909",

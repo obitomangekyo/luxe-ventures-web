@@ -4,7 +4,7 @@ import { themeInitScript } from "@/lib/theme";
 
 export function RootDocument({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         {/* biome-ignore lint/security/noDangerouslySetInnerHtml: static theme bootstrap contains no user input */}
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />

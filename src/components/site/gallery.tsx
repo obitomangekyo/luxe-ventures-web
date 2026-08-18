@@ -1,4 +1,5 @@
 import ArrowNE from "@/assets/svgs/doodle-icons/arrow-ne.svg?react";
+import { InstagramShowcase } from "@/components/site/instagram-showcase";
 import { SectionIntro } from "@/components/site/section-intro";
 import { ThemedImage } from "@/components/site/themed-image";
 import { gallery } from "@/data/content";
@@ -22,22 +23,17 @@ export function Gallery() {
         </div>
         <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-5">
           {gallery.map((image) => (
-            <div
-              className={cn("overflow-hidden", image.className)}
-              key={image.asset.luxury.fallback}
-            >
+            <div className={cn("overflow-hidden", image.className)} key={image.asset.luxury.src}>
               <ThemedImage
                 asset={image.asset}
                 alt={image.alt}
-                width={image.width}
-                height={image.height}
                 loading="lazy"
-                sizes="(min-width: 768px) 25vw, 50vw"
                 className="h-full w-full object-cover grayscale-15 transition duration-700 hover:scale-105 hover:grayscale-0"
               />
             </div>
           ))}
         </div>
+        <InstagramShowcase />
       </div>
     </section>
   );

@@ -23,7 +23,7 @@ export function Hero() {
           in luxury.
         </h1>
         <p className="mt-8 max-w-lg font-body text-brand-text/65 text-sm leading-7 sm:text-base">
-          Affordable, premium event decoration and styling tailored for your most memorable moments.
+          Premium event decoration and styling tailored for your most memorable moments.
         </p>
         <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
           <Button
@@ -52,9 +52,6 @@ export function Hero() {
             summer:
               "Sunlit garden gathering with warm white linen, mint napkins, warm peach flowers, citrus, and woven chairs",
           }}
-          width={1086}
-          height={1448}
-          sizes="(min-width: 768px) 36vw, 100vw"
           fetchPriority="high"
           className="relative aspect-3/4 w-full object-cover"
         />

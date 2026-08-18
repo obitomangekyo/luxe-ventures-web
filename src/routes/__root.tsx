@@ -1,4 +1,5 @@
-import { createRootRoute } from "@tanstack/react-router";
+import type { QueryClient } from "@tanstack/react-query";
+import { createRootRouteWithContext } from "@tanstack/react-router";
 import { RootError, RootNotFound, RootPending } from "@/components/root/root-boundaries";
 import { RootDocument } from "@/components/root/root-document";
 import { RootLayout } from "@/components/root/root-layout";
@@ -8,7 +9,11 @@ import { SEO_CONSTANTS } from "@/lib/seo-constants";
 import { generateStructuredData } from "@/lib/seo-helpers";
 import appCss from "@/styles.css?url";
 
-export const Route = createRootRoute({
+export interface MyRouterContext {
+  queryClient: QueryClient;
+}
+
+export const Route = createRootRouteWithContext<MyRouterContext>()({
   wrapInSuspense: true,
   pendingMs: 200,
   pendingMinMs: 350,

@@ -22,9 +22,6 @@ export function Services() {
               <ThemedImage
                 asset={service.image}
                 alt={service.alt}
-                width={service.width}
-                height={service.height}
-                sizes="(min-width: 768px) 50vw, 100vw"
                 className="aspect-4/3 w-full object-cover transition-transform duration-1000 hover:scale-105"
               />
             </div>

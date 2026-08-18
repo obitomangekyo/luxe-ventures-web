@@ -149,12 +149,15 @@ function DateField({ control }: { control: InquiryForm["control"] }) {
   );
 }
 
-const eventTypeOptions = [
-  { label: "Wedding reception", value: "Wedding" },
-  { label: "Milestone celebration", value: "Birthday" },
-  { label: "Corporate gathering", value: "Corporate" },
-  { label: "Bespoke custom setup", value: "Other" },
-];
+const eventTypeOptions = {
+  Proposal: "Proposal",
+  "Wedding reception": "Wedding reception",
+  Birthday: "Birthday",
+  "Baby shower": "Baby shower",
+  "Corporate gathering": "Corporate gathering",
+  "Bridal shower": "Bridal shower",
+  "Custom event": "Custom event",
+};
 
 function EventTypeField({ control }: { control: InquiryForm["control"] }) {
   return (
@@ -183,9 +186,9 @@ function EventTypeField({ control }: { control: InquiryForm["control"] }) {
                 <SelectValue placeholder="Select event type" />
               </SelectTrigger>
               <SelectContent className="rounded-none border-brand-detail/60 bg-brand-bg font-body">
-                {eventTypeOptions.map((option) => (
-                  <SelectItem key={option.value} value={option.value}>
-                    {option.label}
+                {Object.entries(eventTypeOptions).map(([key, value]) => (
+                  <SelectItem className="rounded-none" key={key} value={value}>
+                    {key}
                   </SelectItem>
                 ))}
               </SelectContent>
